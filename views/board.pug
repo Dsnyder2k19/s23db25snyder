@@ -1,0 +1,30 @@
+extends layout
+
+block content 
+  h1= title 
+  p Welcome to Board Display 
+  p Rows: #{query.rows} 
+  p Collumns #{query.cols} 
+
+  - let rows = Number(query.rows)
+  - let cols = Number(query.cols)
+
+  - if (!Number.isInteger(rows) || !Number.isInteger(cols))
+    p Both rows and cols are integers.
+  - else if (rows < 1 || rows > 10)
+    p Rows are between 1 and 10. 
+  - else if (cols < 1 || cols > 10)
+    p Collumns are between 1 and 10. 
+  - else 
+    table#outer 
+      -for (let i = 0; i < rows; i++)
+        tr#middle 
+          - for (let j = 0; j < cols; j++)
+            -let value = 0
+            - if (i === j)
+             - value = 1
+            - else if (i -1 === j)
+              - value = 2
+            - else if (i + 1 === j)
+             -value = i 
+            td= value
