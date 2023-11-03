@@ -5,3 +5,5 @@ Part 2: initializzed repo, stages the files, made a remote repository, made the 
 [Render Server] (https://f23wb25snyder.onrender.com)
 
 Part 5: Class-Books; Attributes- title, author, and price
+
+[New Render Server] (https://s23db25snyder.onrender.com)
